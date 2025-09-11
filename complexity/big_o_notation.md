@@ -21,4 +21,4 @@
 
 **Growth Rate Comparison**
 
-log n < n < n log n < n^2 < n^3 < 2^n < n!
+$O(n \log n)$<$O(n)$<$O(n^2)$<$O(n^3)$<$O(2^n)$<$O(n!)$ 
