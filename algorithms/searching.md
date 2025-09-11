@@ -16,6 +16,11 @@ Searching = finding a target value inside a collection (array, list, tree, graph
 - **Best case:** O(1) (middle element is target).
 - **Worst case:** O(log n).
 
+| Algorithm     | Best Case | Worst Case | Requirement         |
+| ------------- | --------- | ---------- | ------------------- |
+| Linear Search | O(1)      | O(n)       | Works on any list   |
+| Binary Search | O(1)      | O(log n)   | List must be sorted |
+
 ### Python Example
 ```python
 #Linear Search
