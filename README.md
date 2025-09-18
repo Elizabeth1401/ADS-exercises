@@ -19,8 +19,10 @@ It contains **theory notes, Python code examples, and solved exercises**.
 
 ### 🗂 Data Structures
 - [Arrays & Strings](data_structures/arrays.md)  
-- [Linked Lists](data_structures/linked_lists.md)  
-- [Stacks & Queues](data_structures/stacks_queues.md)  
+- [List](data_structures/list.md)
+- [Linked Lists](data_structures/linked_lists.md)
+- [Queue](data_structures/queue.md)  
+- [Stacks](data_structures/stacks.md)  
 - [Trees (Binary Trees, BSTs, Traversals)](data_structures/trees.md)  
 - [Graphs (BFS, DFS, Dijkstra)](data_structures/graphs.md)  
 
