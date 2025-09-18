@@ -65,3 +65,23 @@ This function recursively extracts all unique vowels from a string.
 - **Recursive case:** split string into halves, process both recursively.
 
 - **Complexity:** O(n log n) due to slicing overhead, or O(n) if indexes are used.
+
+## Task 5
+Implement a function thet uses binary search on a sorted list of ints,
+to find out how many times an int occurs in the list:
+count_occurrences([1,2,2,3,4],2) Returns 3
+count_occurrences([1,3,5,7],4) Returns 0
+
+---
+
+- We do two specialized binary searches:
+
+- - Left bound: keep searching left while we can still see x at mid.
+
+- - Right bound: keep searching right while we can still see x at mid.
+
+- Base case: interval becomes empty (low > high) → return -1.
+
+- Time complexity: each search is O(log n); two searches → O(log n) overall.
+
+- Why sorted is required: binary search only works when the search space is ordered.

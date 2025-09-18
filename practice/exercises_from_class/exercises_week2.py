@@ -131,3 +131,54 @@ Time complexity
 - Slicing costs O(n)
 - The recursion tree has O(log n) levels
 - Total complexity: O(n log n)
+"""
+
+"""
+------------------------
+Exercise 5:
+Implement a function thet uses binary search on a sorted list of ints,
+to find out how many times an int occurs in the list:
+count_occurrences([1,2,2,3,4],2) Returns 3
+count_occurrences([1,3,5,7],4) Returns 0
+"""
+def binary_search_bound(a, x, low = 0, high = None, want = "left"):
+    """
+    Return the index of the leftmost/rigtmost occurrence of x in sorted list a.
+    If x is not present, return -1.
+
+    want = "left" -> first(lowest) index where a[i] == x
+    want = "right" -> last(highest) index where a[i] == x
+    """
+
+    if high is None:
+        high = len(a) - 1
+    
+    if low > high: # Base case: empty interval
+        return -1 
+    
+    mid = (low + high) // 2
+
+    if a[mid] == x:
+        # I found x, but I might not be at the boundary yet.
+        if want == "left":
+            #Try to push boundary to the left
+            left_idx = binary_search_bound(a, x, low, mid - 1, "left")
+            return left_idx if left_idx != -1 else mid
+        else: # want == "right"
+        #Try to push boundary to the right
+        right_idx = binary_search_bound(a, x, mid +1, high, "right")
+        return right_idx if right_idx!= -1 else mid 
+    elif a[mid] < x:
+        return binary_search_bound(a, x, mid +1, high, want)
+    else:
+        return binary_search_bound(a, x, low, mid -1, want)
+
+def count_occurrences(a, x):
+    """
+    Count how many times x appears in sorted list a
+    """
+    left = binary_search_bound(a, x, want = "left")
+    if left == -1: #Not found at all
+       return 0
+    right = binary_search_bound(a, x, want= "right")
+    return right - left + 1
